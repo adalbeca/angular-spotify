@@ -1,0 +1,20 @@
+<div class="card-columns m-4">
+    <div
+        (click)="showSinger(singer)"
+        class="card puntero"
+        *ngFor="let singer of artists"
+    >
+        <img [src]="singer.images | noimage" class="card-img-top" alt="..." />
+        <div class="card-body">
+            <h5 class="card-title">{{ singer.name }}</h5>
+            <p class="card-text">
+                <span
+                    *ngFor="let artist of singer.artists"
+                    class="badge badge-pill badge-dark p-2"
+                >
+                    {{ artist.name }}</span
+                >
+            </p>
+        </div>
+    </div>
+</div>
